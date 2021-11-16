@@ -1,0 +1,38 @@
+body{
+    width: 1500px;
+    margin: 0 auto;
+}
+.hello{
+    background: #eaeaea;
+    width: fit-content;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px ;
+}
+li{
+    font-size: 25px;
+}
+.simpsons{
+    font-size: 20px;
+}
+.simpsons2{
+}
+.simpsons__content2{
+    width: 30%;
+    margin: 20px;
+    text-align: center;
+}
+.simpsons__content2 p{
+    font-size: 20px;
+}
+.simpsons__content2 >img{
+    width: 25%;
+}
+
+.product-card{
+    width: 300px;
+    margin: 20px;
+}
+.product-card img{
+    width: 80%;
+}
