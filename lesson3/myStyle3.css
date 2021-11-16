@@ -1,7 +1,8 @@
 body{
-    width: 1500px;
+    width: 1900px;
     margin: 0 auto;
 }
+
 .hello{
     background: #eaeaea;
     width: fit-content;
@@ -12,6 +13,8 @@ body{
 li{
     font-size: 25px;
 }
+
+/*classwork3.1*/
 .simpsons{
     font-size: 20px;
 }
@@ -35,4 +38,16 @@ li{
 }
 .product-card img{
     width: 80%;
+}
+
+/*additional*/
+.wrap{
+    margin: 20px 0;
+   row-gap: 20px;
+}
+.post-card{
+    width: 19%;
+    padding: 10px;
+    text-align: center;
+    background: #d2e4ff;
 }
