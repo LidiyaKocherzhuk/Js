@@ -12,8 +12,12 @@ console.log(arrayNumber, arrayString, arrayAll);
 
 // -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
 //
-let array = ['cat', 'dog', 'cow', 'chicken', 'rabbit'];
-console.log(`I like ${array[1]};`);
+let array = [];
+array[0] = 'cat';
+array[1] = 'dog';
+array[2] = 'chicken';
+array[3] = 'rabbit';
+console.log(`${array}; `);
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
@@ -25,7 +29,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 for (let i = 0; i < 10; i++) {
-    document.write(`<div class="hello"> Hello ${i + 1} </div>`)
+    document.write(`<div class="hello"> Hello ${i} </div>`)
 }
 
 let i = 0;
@@ -36,7 +40,7 @@ while (i < 20) {
 
 let a = 0;
 while (a < 20) {
-    document.write(`<h1>Item - ${a + 1}</h1>`);
+    document.write(`<h1>Item - ${a}</h1>`);
     a++;
 }
 
@@ -92,7 +96,17 @@ console.log(`------------------`);
 
 
 // - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
-let array1 = ['name', 'surname', 'age', 25, 36, 12, true, 2 > 10, 3, 9];
+let array1 = [];
+array1[0] = 'name';
+array1[1] = 'surname';
+array1[2] = 'age';
+array1[3] = 25;
+array1[4] = 36;
+array1[5] = 12;
+array1[6] = true;
+array1[7] = 2 > 10;
+array1[8] = 3;
+array1[9] = 9;
 for (const elements of array1) {
     console.log(elements);
 }
@@ -100,16 +114,16 @@ console.log(`------------------`);
 
 // - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 for (let i = 0; i < 10; i++) {
-    console.log(i+1);
-    document.write(`<h3>${i+1}</h3>`)
+    console.log(i);
+    document.write(`<h3>${i}</h3>`)
 }
 console.log(`------------------`);
 
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 document.write(`<div class="hello">`)
 for (let i = 0; i < 100; i++) {
-    console.log(i+1);
-    document.write(i+1)
+    console.log(i);
+    document.write(`${i} `)
 }
 console.log(`------------------`);
 document.write(`</div>`)
@@ -117,8 +131,8 @@ document.write(`</div>`)
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
 document.write(`<div class="hello">`)
 for (let i = 0; i < 100; i+=2) {
-    console.log(i+2);
-    document.write(i+2)
+    console.log(i);
+    document.write(`${i} `)
 }
 console.log(`------------------`);
 document.write(`</div>`)
@@ -126,8 +140,8 @@ document.write(`</div>`)
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
 document.write(`<div class="hello">`)
 for (let i = 0; i < 100; i+=2) {
-    console.log(i+2);
-    document.write(i+2)
+    console.log(i);
+    document.write(`${i} `)
 }
 console.log(`------------------`);
 document.write(`</div>`)
@@ -135,8 +149,8 @@ document.write(`</div>`)
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 document.write(`<div class="hello">`)
 for (let i = 0; i < 100; i+=2) {
-    console.log(i+1);
-    document.write(i+1)
+    console.log(i);
+    document.write(`${i} `)
 }
 console.log(`------------------`);
 document.write(`</div>`)
