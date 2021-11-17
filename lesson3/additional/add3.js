@@ -19,7 +19,8 @@
 //     /*За допомогою циклу вивести всю інформацію про пости використовуючи шаблон Template 1.1.
 //     * ЗА допомоги стилів побудувати структуру "сітки" по 5 об'єктів в лінію
 //     * */
-    let users = [
+
+  let users = [
     {
         userId: 1,
         id: 1,
@@ -621,8 +622,9 @@
         body: 'cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut'
     }
     ];
-document.write(`<div class="wrap d-flex flex-wrap justify-content-between">`);
-for (let user of users) {
-    document.write(`<div class="post-card "><h3>${user.id} - ${user.title}</h3><p>${user.body}</p></div>`)
-}
-document.write(`</div>`);
+
+// document.write(`<div class="wrap d-flex flex-wrap justify-content-between">`);
+// for (let user of users) {
+//     document.write(`<div class="post-card "><h3>${user.id} - ${user.title}</h3><p>${user.body}</p></div>`)
+// }
+// document.write(`</div>`);
