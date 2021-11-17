@@ -17,7 +17,7 @@ array[0] = 'cat';
 array[1] = 'dog';
 array[2] = 'chicken';
 array[3] = 'rabbit';
-console.log(`${array}; `);
+console.log(array);
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
