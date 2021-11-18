@@ -3,16 +3,16 @@
 
 let arrayNumbers = [];
 
-// let j;
-// for (let i = 0; i <= 50; i++) {
-//     if (i%2===0){
-//         j=j++;
-//       arrayNumbers[j] = i;
-//     }
-//     console.log(arrayNumbers[j])
-//     }
-// console.log(arrayNumbers)
-// document.write(arrayNumbers)
+let j;
+for (let i = 0; i <= 50; i++) {
+    if (i%2===0){
+        j=j++;
+      arrayNumbers[j] = i;
+    }
+    console.log(arrayNumbers[j])
+    }
+console.log(arrayNumbers)
+document.write(arrayNumbers)
 
 // for (let i = 2, j = 0; i<=50; i+=2, j++){
 //     arrayNumbers[j] = i;
@@ -38,7 +38,7 @@ let arrayNumbers = [];
 
 // let i = 0;
 // while (i < 20) {
-//     let random = Math.floor(Math.random(8) * 732);
+//     let random = Math.floor(Math.random() * 724)+8;
 //     arrayNumbers[i] = random;
 //     i++;
 // }

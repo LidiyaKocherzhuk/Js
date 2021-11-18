@@ -7,17 +7,16 @@
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 
-// function sCircle(r) {
-//     return Math.PI * r**2;
-// }
-// console.log(sCircle(5));
+function sCircle(r) {
+    return Math.PI * r**2;
+}
+console.log(sCircle(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-
-// function sCylinder(h, r) {
-//     return Math.PI * r ** 2 * h;
-// }
-// console.log(sCylinder(5, 2));
+function sCylinder(h, r) {
+    return 2 * sCircle(r) + 2 * Math.PI * r * h;
+}
+console.log(sCylinder(5, 2));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 
