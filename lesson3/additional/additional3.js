@@ -149,11 +149,6 @@ for (let i = 0; i < usersWithId.length; i++) {
     }
 }
 console.log(usersWithCities)
-for (let element of usersWithCities) {
-    for (let key in element) {
-        document.write(`<h5>${key} - ${element[key]}</h5>`)
-    }
-}
 
 
 // З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
