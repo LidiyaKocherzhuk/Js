@@ -145,3 +145,4 @@ let products = [
         document.write(`<div class="product-card text-center"><h3>${produktCard.title}. </br> Price - ${produktCard.price}</h3><img src="${produktCard.image}" alt="produkt"/></div>`);
     }
     document.write(`</div>`);
+

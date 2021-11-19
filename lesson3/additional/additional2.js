@@ -261,6 +261,7 @@
 //         }
 //     }
 // ];
+
 // document.write(`<div class="users-box">`);
 // for (let user of usersList) {
 //     document.write(`<div class="user-block"> `);
