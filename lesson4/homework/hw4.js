@@ -13,7 +13,7 @@ function sCircle(r) {
 console.log(sCircle(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-function sCylinder(h, r) {
+function sCylinder(r, h) {
     return 2 * sCircle(r) + 2 * Math.PI * r * h;
 }
 console.log(sCylinder(5, 2));

@@ -38,16 +38,16 @@ function isNumber() {
 
 let arrayNumbers = [6, 9, 3, 5];
 
-// function max(array) {
-//     let arMax = array.length;
-//     for (let num of array) {
-//         if (num > arMax) {
-//             arMax = num;
-//         }
-//     }
-//     return arMax;
-// }
-// console.log(max(arrayNumbers));
+function max(array) {
+    let arMax = array.length;
+    for (let num of array) {
+        if (num > arMax) {
+            arMax = num;
+        }
+    }
+    return arMax;
+}
+console.log(max(arrayNumbers));
 
 // - створити функцію яка повертає найменьше число з масиву
 

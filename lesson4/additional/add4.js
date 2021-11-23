@@ -33,12 +33,13 @@
 // }
 // console.log(array(arrayOne,arrayTwo));
 
-//
 // - Створити функцію яка приймає масив будь яких объектів, та повертає масив ключів всіх обєктів
 // EXAMPLE:
 //     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
 
 let arrayObject = [{name: 'Dima', age: 13}, {model: 'Camry'}];
+
+
 
 // function keyReturn(arr) {
 //     let keyArray = [], k = 0;
