@@ -35,34 +35,33 @@ let trim = strDirty.trim();
 console.log(trim)
 document.write(`<h3>${trim}</h3>`);
 
-
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Каждый охотник желает знать';
 // let arr = stringToarray(str);
 // document.writeln(arr); // ['Каждый', 'охотник', 'желает', 'знать']
 
-let str = 'Каждый охотник желает знать';
-let arr = str.split(' ');
-console.log(arr);
-document.writeln(`<h3>${arr}</h3>`); // ['Каждый', 'охотник', 'желает', 'знать']
+let string = 'Каждый охотник желает знать';
+let arr = (str)=> str.split(' ');
+console.log(arr(string));
+document.writeln(`<h3>${arr(string)}</h3>`); // ['Каждый', 'охотник', 'желает', 'знать']
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 //     let str = 'Каждый охотник желает знать';
 // document.writeln(delete_characters(str, 7)); // Каждый
 
-let slice = str.slice(0,7);
-console.log(slice)
-document.write(`<h3>${slice}</h3>`);
+let slice = (cut) => cut.slice(0,7);
+console.log(slice(string))
+document.write(`<h3>${slice(string)}</h3>`);
 
 // - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
 //     let str = "HTML JavaScript PHP";
 // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
 
 let strHTML = "HTML JavaScript PHP";
-let replaceAll = strHTML.replaceAll(' ','-')
-                        .toUpperCase();
-console.log(replaceAll)
-document.writeln(`<h3>${replaceAll}</h3>`); // 'HTML-JAVASCRIPT-PHP'
+
+let insert_dash = (str) => str.replaceAll(' ','-').toUpperCase();
+console.log(insert_dash(strHTML))
+document.writeln(`<h3>${insert_dash(strHTML)}</h3>`); // 'HTML-JAVASCRIPT-PHP'
 
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
 
@@ -77,6 +76,7 @@ let fnUpp = (str) => {
     console.log(newStr.join(' '))
 };
 fnUpp('hi js, java, python, node');
+
 
 let toUpperCaseAll = (str) => {
     let newStr = str.split(' ')
