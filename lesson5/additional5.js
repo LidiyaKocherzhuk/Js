@@ -46,31 +46,31 @@ fnNum(95, 65);
 // [1,0,6,0,3] => [1,6,3,0,0]
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
-
-let array = [2,0,8,6,45,0,32,1,0,9,5];
-let b=array.length;
-let v=b
-for(let i=0;i<b;i++){
-    if (array[i]===0){
-                array[v++]=array[i]
-        console.log(i)
-        console.log(b)
-for (let c=i;c<b;c++){
-    let q=c
-
-    array[q]=array[++q]
-
-    console.log(array)
-
-}
-        array.length--
-
-
-             }
-
-}
-document.write(array);
-
+let array = [2,0,8,6,45,0,0,9,5];
+console.log(array)
+// let b=array.length;
+// let v=b
+// for(let i=0;i<b;i++){
+//     if (array[i]===0){
+//                 array[v++]=array[i]
+//         console.log(i)
+//         console.log(b)
+// for (let c=i;c<b;c++){
+//     let q=c
+//
+//     array[q]=array[++q]
+//
+//     console.log(array)
+//
+// }
+//         array.length--
+//
+//
+//              }
+//
+// }
+// document.write(array);
+//
 
 
 
@@ -82,14 +82,14 @@ document.write(array);
 
 
 // array[b]=i;
-//
-// let fnZeroEnd = (arr) => {
-//     let splice = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] === 0) {
-//             splice= arr.splice(arr[i], i);
-//     }
-// }
-//         console.log(arr)
-// };
-// fnZeroEnd(array)
+
+let fnZeroEnd = (arr) => {
+    let splice = arr[0];
+    for (let i = 0;arr.length; i++) {
+        if (arr[i] === 0) {
+            splice = arr.splice(i,i);
+    }
+}
+        console.log(arr)
+};
+fnZeroEnd(array)
