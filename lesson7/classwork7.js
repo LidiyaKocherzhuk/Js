@@ -22,7 +22,7 @@ function Cars(model, manufacturer, year, maxSpeed, engineCapacity) {
         }
     }
     this.increaseMaxSpeed = function (newSpeed) {
-        this.maxSpeed = newSpeed;
+        this.maxSpeed = this.maxSpeed + newSpeed;
         return newSpeed;
     };
     this.changeYear = function (newValue) {
@@ -37,11 +37,11 @@ function Cars(model, manufacturer, year, maxSpeed, engineCapacity) {
         return object;
     }
 }
-let cars = new Cars('BMW', 'Germany', 2020, '180 km/h', '2,5l');
+let cars = new Cars('BMW', 'Germany', 2020, 180, '2,5l');
 console.log(cars);
 cars.drive();
 cars.info(cars);
-console.log(cars.increaseMaxSpeed('200 km/h'))
+console.log(cars.increaseMaxSpeed(20))
 console.log(cars.changeYear(2021))
 console.log(cars.addDriver(cars, 'Lidiya', 'Kocherzhuk'));
 
@@ -79,7 +79,7 @@ class Cars2 {
     }
 
     increaseMaxSpeed(newSpeed) {
-        this.maxSpeed = newSpeed;
+        this.maxSpeed = this.maxSpeed + newSpeed;
         return newSpeed;
     }
 
@@ -95,10 +95,10 @@ class Cars2 {
 
 }
 
-let car = new Cars2('Subaru', 'Japan', 2020, '180 km/h', '2 l');
+let car = new Cars2('Subaru', 'Japan', 2020, 180, '2 l');
 car.drive();
 car.info(car);
-console.log(car.increaseMaxSpeed('200 km/h'));
+console.log(car.increaseMaxSpeed(50));
 console.log(car.changeYear(2021));
 
 
