@@ -10,6 +10,48 @@
 <body>
 <script src="homework7.js"></script>
 <script src="classwork7.js"></script>
+<script>
 
+    // Сумма цифр числа
+    // Дано натуральное число N. Вычислите сумму его цифр.
+    //     При решении этой задачи нельзя использовать строки,
+    //     массивы ну и циклы
+    // Вам поможет Рекурсія)
+    //
+    // пример:
+    //     1234 -> 10
+    // 879 -> 24
+    // 11 -> 2
+
+    // function getSumNumber(num) {
+    //     var sum = 0, tmp;
+    //     while (num) {
+    //         tmp = num % 10;
+    //         num = (num - tmp) / 10;
+    //         sum += tmp;
+    //     }
+    //     return sum;
+    // }
+    // alert(getSumNumber(2610));
+
+
+    function f(num) {
+        let sum = 0;
+        if (num) {
+            let s = num % 10;
+            num = (num - s) / 10;
+            sum += s;
+            if (s < 1) return 1;
+            else return f(num = sum);
+        }
+    }
+
+    console.log(f(1234));
+    f(879);
+    f(12);
+
+
+
+</script>
 </body>
 </html>
