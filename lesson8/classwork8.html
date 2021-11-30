@@ -102,8 +102,8 @@
   }
 
   // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
-  let elementOfContent1 = document.getElementsByClassName('content_1');
-  // elementOfContent1[0].innerHTML = prompt('Write text!');
+  let elementOfContent1 = document.querySelector('.content_1>p');
+  elementOfContent1.innerHTML = prompt('Write text!');
 
   // l) отримати елементи p та змінити їм padding на 20px
   let elementsP = document.querySelectorAll('p');
