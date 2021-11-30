@@ -36,31 +36,31 @@
     console.log(elementContent);
 
     // -- отримує текст з блоку з id "rules"
-    let elementRules = document.getElementsByTagName('div')
+    let elementRules = document.getElementById('rules')
     console.log(elementRules);
 
     // -- замініть текст параграфа з id 'content' на будь-який інший
     elementContent.innerText = 'Первое правило Бойцовского клуба: никому не рассказывать о Бойцовском клубе.';
 
     // -- замініть текст параграфа з id 'rules' на будь-який інший
-    elementRules[0].innerText = 'Второе правило Бойцовского\n' +
+    elementRules.innerText = 'Второе правило Бойцовского\n' +
         '        клуба: никогда никому не рассказывать о Бойцовском клубе'
 
     // -- змініть кожному елементу колір фону на червоний
     elementContent.style.background = 'red';
-    elementRules[0].style.background = 'red';
+    elementRules.style.background = 'red';
 
     // -- змініть кожному елементу колір тексту на синій
     elementContent.style.color = 'blue';
-    elementRules[0].style.color = 'blue';
+    elementRules.style.color = 'blue';
 
     // -- отримати весь список класів елемента з id=rules і вивести їх в console.log
     let rules = document.getElementById('rules');
     console.log(rules.classList);
 
     // -- поміняти колір тексту у всіх елементів fc_rules на червоний
-    let elementsFc_rules = document.getElementsByClassName('fc_rules');
-    for (const elementsFcRule of elementsFc_rules) {
+    let fc_ruleselEments = document.getElementsByClassName('fc_rules');
+    for (const elementsFcRule of fc_ruleselEments) {
         elementsFcRule.style.color = 'red';
     }
 

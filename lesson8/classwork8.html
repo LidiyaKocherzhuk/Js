@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+
+  <style>
+    .september-2021 {
+      color: #0dcaf0;
+    }
+
+  </style>
+
 </head>
 <body>
 <h1 id="main_header">This is page for task2</h1>
@@ -34,6 +42,8 @@
   // Взяти файл template_2.html та працювати в ньому
   // 1) Напишіть код, який :
   // a) змінює колір тексту елемнту з ід main_header на назву групи в якій ви вчитесь (mon-year)
+    let  main_headerElement = document.getElementById('main_header');
+  main_headerElement.classList.add('september-2021');
 
   // b) робить шириниу елементу ul 400px
   let elementUl = document.querySelector('ul');
@@ -46,8 +56,8 @@
   }
 
   // d) отримує текст який зберігається в елементі з класом listElement2
-  let textlistElement2 = document.getElementsByClassName('listElement2');
-  console.log(textlistElement2[0]);
+  let textlistElement2 = document.querySelector('.listElement2>a');
+  console.log(textlistElement2.innerHTML);
 
   // e) отримує всі елементи li та змінює ім колір фону на сірий
   let allElementsLi = document.getElementsByTagName('li');
@@ -63,24 +73,31 @@
 
   // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
   for (const element of elementA) {
-    if (element.innerText === 'link3') {
+    if (element.innerText.includes('link3') ) {
       element.style.fontSize = '40px';
     }
   }
 
   // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
+  for (const element of elementA) {
+    element.classList.toggle('element_XXX');
+  }
+  let classXXX = document.getElementsByClassName('element_XXX');
+  for (const element of classXXX) {
+    element.innerText = 'XXX';
+  }
 
 
   // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
   let elementsSubHeader = document.getElementsByClassName('sub-header');
   for (const element of elementsSubHeader) {
-    // element.style.background = prompt('write color!');
+    // element.style.background = prompt('write background color!');
   }
 
   // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
   for (const element of elementsSubHeader) {
-    if (element.innerText === 'content 2 segment') {
-      // element.style.color = prompt('Write color!');
+    if (element.innerText.includes('content 2 segment')) {
+      // element.style.color = prompt('Write text color!');
     }
   }
 
