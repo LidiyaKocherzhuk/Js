@@ -48,22 +48,22 @@ let simpsons = [
 // // - взяти попередній масив з сімпсонами.
 // //     Проітерувати його, створиши для кожного елементу масиву <div class='member'>. Для кожної властивості елементу створити окремий блок, та помістити його у div.member
 //
-// for (const arrayElement of simpsons) {
-//     let divElement = document.createElement('div');
-//     divElement.classList.add('member');
-//     document.body.appendChild(divElement);
-//     for (const key in arrayElement) {
-//         if (key.includes('photo')) {
-//             let img = document.createElement('img');
-//             img.src = arrayElement[key];
-//             divElement.appendChild(img);
-//         } else {
-//             let h2Elements = document.createElement('h2');
-//             h2Elements.innerText = arrayElement[key];
-//             divElement.appendChild(h2Elements);
-//         }
-//     }
-// }
+for (const arrayElement of simpsons) {
+    let divElement = document.createElement('div');
+    divElement.classList.add('member');
+    document.body.appendChild(divElement);
+    for (const key in arrayElement) {
+        if (key.includes('photo')) {
+            let img = document.createElement('img');
+            img.src = arrayElement[key];
+            divElement.appendChild(img);
+        } else {
+            let h2Elements = document.createElement('h2');
+            h2Elements.innerText = arrayElement[key];
+            divElement.appendChild(h2Elements);
+        }
+    }
+}
 
 // - Є масив
 let coursesArray = [
