@@ -1,6 +1,5 @@
 // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
 //
-
 let text = document.getElementById('text');
 let button = document.getElementById('button');
     button.onclick = function () {
