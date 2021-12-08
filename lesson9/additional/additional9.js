@@ -235,36 +235,33 @@
 
 // Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
 
-        // for (const arrayElement of usersList) {
-        //     let divElement = document.createElement('div');
-        //         for (const key in arrayElement) {
-        //             let headingElement = document.createElement('h2');
-        //             headingElement.innerHTML = arrayElement[key];
-        //             if (typeof arrayElement[key] === 'object') {
-        //                 for (const keyIn in key) {
-        //                     let headingElement1 = document.createElement('h3');
-        //                     headingElement.innerHTML = key[keyIn];
-        //                     headingElement.appendChild(headingElement1);
-        //                 }
-        //             }
-        //             divElement.appendChild(headingElement);
-        //         }
-        //
-        //     document.body.appendChild(divElement);
-        //     }
+        for (const arrayElement of usersList) {
+            let divElement = document.createElement('div');
+            divElement.classList.add('userBloc')
+                for (const keyElement in arrayElement) {
 
-for (const arrayElement of usersList) {
-    let divElement = document.createElement('div');
-        foo(arrayElement);
-    document.body.appendChild(divElement);}
- function foo (arr) {
-    console.log(arr);
-    if (arr.children.length) {
-        for (const arrElementKey in arr) {
-            let h2 = document.createElement('h2');
-            h2.innerHTML = arr[arrElementKey];
-            divElement.appendChild(h2);
-            foo(arrElementKey);
-        }
-    }
-}
+                    let headingElement = document.createElement('h2');
+                    headingElement.innerHTML = `${keyElement} - ${arrayElement[keyElement]}`;
+
+                    function foo(key ,obj, element) {
+                        if (typeof obj === 'object') {
+                            let divIn = document.createElement('div');
+                            divIn.classList.add('style');
+                            element.innerHTML = `${key}:`
+                            let inElement = obj;
+                            for (const key in inElement) {
+                                let h5 = document.createElement('h5');
+                                h5.innerHTML = `${key} - ${inElement[key]}`
+                                divIn.appendChild(h5);
+                                console.log(inElement[key])
+                                foo(key, inElement[key],h5);
+                            element.appendChild(divIn);
+                            }
+                        }
+                    }
+
+                    foo(keyElement ,arrayElement[keyElement],headingElement);
+                    divElement.appendChild(headingElement);
+                }
+            document.body.appendChild(divElement);
+            }
