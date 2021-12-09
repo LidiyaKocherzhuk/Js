@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        form {
+            width: 100%;
+        }
+        #divElement{
+            margin: 20px;
+            font-size: 20px;
+            border: 1px solid #c9c9c9;
+            width: 300px;
+            box-shadow:0 0 10px 0 #53ac6b4f;
+            border-radius: 20px;
+        }
+        #btnFavorites {
+            margin: 15px;
+            padding: 5px;
+            border-radius: 10px;
+            background: whitesmoke;
+        }
+        #showFavorite {
+            width: 100%;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<form action="" name="localstorage">
+    <input type="text" name="userName">
+    <input type="number" name="age">
+    <button id="saveLocalstor">Записати в локальне сховише</button>
+</form>
+
+<hr>
+
+<form action="" name="car">
+    <input type="text" name="model">
+    <input type="text" name="carType">
+    <input type="text" name="volume">
+    <button id="saveCar">Зберети в локальне сховише</button>
+</form>
+
+<script src="homework11.js"></script>
+<script src="classwork11.js"></script>
+
+</body>
+</html>

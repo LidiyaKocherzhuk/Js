@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #id{
+            width: 200px;
+            height: 100px;
+            background: #0dcaf0;
+
+        }
+        #id, #pop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pop {
+            width: 200px;
+            height: 50px;
+            background: rgba(236, 236, 236, 0.3);
+            border-radius: 20px;
+        }
+        .popup {
+            width: 500px;
+            height: 300px;
+            background: rgba(245, 245, 245, 0.25);
+            border-radius: 20px;
+            position: absolute;
+            top: -500px;
+            transition: 1s;
+        }
+        .popupShow {
+            position: relative;
+            top: 50px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="id" class="one, two, three"><h2>Click me</h2></div>
+
+<hr>
+
+<div id="pop" class="a, b"><h2>Click me</h2></div>
+<div class="popup"></div>
+
+<hr>
+
+    <input type="checkbox" id="check1">
+    <input type="checkbox" id="check2">
+    <input type="checkbox" id="check3">
+<button id="buttonFilter">filter</button>
+
+<script src="additional10.js"></script>
+</body>
+</html>

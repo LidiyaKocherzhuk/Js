@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Favirites</title>
+
+    <style>
+        body {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+        #divElement>ul {
+            font-size: 20px;
+            border: 1px solid #c9c9c9;
+            width: 300px;
+            box-shadow:0 0 10px 0 #53ac6b4f;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>My favorite users:</h1>
+<script>
+    let faviritesUserStr = localStorage.getItem('favorites');
+    let faviritesUserArr = JSON.parse(faviritesUserStr);
+    console.log(faviritesUserArr)
+
+    for (const element of faviritesUserArr) {
+        let div = document.createElement('div');
+        div.id = 'divElement';
+        let ul = document.createElement('ul');
+        for (const key in element) {
+            let li = document.createElement('li');
+            li.innerText = `${key}: ${element[key]}`;
+            ul.appendChild(li);
+        }
+        div.appendChild(ul);
+        document.body.appendChild(div);
+    }
+
+</script>
+</body>
+</html>
