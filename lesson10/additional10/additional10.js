@@ -59,46 +59,96 @@ let usersWithAddress = [
 let check1 = document.getElementById('check1');
 let check2 = document.getElementById('check2');
 let check3 = document.getElementById('check3');
+let filterArray = [];
 
-// for (const elementUser of usersWithAddress) {
-//     let div = document.createElement('div');
-            check1.onclick = function () {
-                if (this.checked) {
+    for (const elementUser of usersWithAddress) {
+        check1.onclick = function () {
+            if (this.checked) {
+                let filterStatus = usersWithAddress.filter(value => !value.status);
+                iter(filterStatus, 'h2');
+                filterArray.push(filterStatus);
 
-                    let filterStatus = usersWithAddress.filter(value => !value.status);
+            }
+        }
 
-                    for (const elementFilterStatus of filterStatus) {
-                        console.log(elementFilterStatus)
-                        for (const keyFilterStatus in elementFilterStatus) {
-                            console.log(keyFilterStatus)
-                            let h2 = document.createElement('h2');
-                            h2.innerHTML = `${keyFilterStatus}: ${elementFilterStatus[keyFilterStatus]}`;
-                            document.body.appendChild(h2);
+        check2.onclick = function () {
+            if (this.checked) {
+                let filterAge = usersWithAddress.filter(value => value.age >= 29);
+                iter(filterAge, 'h2');
+                filterArray.push(filterAge);
+            }
+        }
 
-                            // if (typeof elementFilterStatus[keyFilterStatus] === 'object') {
-                            //     for (const key in elementFilterStatus[keyFilterStatus]) {
-                            //         let h3 = document.createElement('h3');
-                            //         h3.innerText = `${key}: ${elementFilterStatus[keyFilterStatus][key]}`;
-                            //         h2.appendChild(h3);
-                            //     }
-                            //
-                            // }
-                        }
+        check3.onclick = function () {
+            if (this.checked) {
+                let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+                iter(filterCity, 'h2');
+                filterArray.push(filterCity);
+            }
+        }
+        let buttonArr = [];
+
+        let buttonFilter = document.getElementById('buttonFilter');
+        buttonFilter.onclick = function (e) {
+            e.preventDefault();
+
+        function f(arr) {
+            console.log(arr)
+            if (arr.length) {
+                for (const arrElement of arr) {
+                    f(arrElement);
                     }
                 }
             }
-    check2.onclick = function () {
-            if (this.checked) {
-                let filterAge = usersWithAddress.filter(value => value.age >= 29);
-                console.log(filterAge)
+            f(filterArray)
             }
-    }
-    check3.onclick = function () {
-            if (this.checked) {
-                let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-                console.log(filterCity)
+
+        // console.log(buttonArr);
+
+
+        // let filterStatus, filterAge, filterCity;
+        //     if (check1.checked) {
+        //         filterStatus = usersWithAddress.filter(value => !value.status);
+        //     }
+        // if (check1.checked && check2.checked) {
+        //         filterAge = filterStatus.filter(value => value.age >= 29);
+        // }else if (check2.checked) {
+        //     filterAge = usersWithAddress.filter(value => value.age >= 29);
+        // }
+        // if (check2.checked && check3.checked) {
+        //     filterCity = filterAge.filter(value => value.address.city === 'Kyiv');
+        // }else if (check1.checked && check3.checked) {
+        //     filterCity = filterStatus.filter(value => value.address.city === 'Kyiv');
+        // }else if (check3.checked) {
+        //     filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+        // }
+        // console.log(filterStatus, filterAge, filterCity);
+
+
+}
+
+// console.log(filterArray);
+
+    function iter(object, tag) {
+        for (const filterElement of object) {
+            let divElement = document.createElement('div');
+            divElement.id = 'objStyle';
+            function foo(element, tag) {
+                for (const key in element) {
+                    let hElement = document.createElement(tag);
+                    hElement.innerHTML = `${key} - ${element[key]};`;
+                    divElement.appendChild(hElement);
+                    if (typeof element[key] === 'object') {
+                        hElement.innerHTML = `${key}:`;
+                        foo(element[key], 'h3');
+                    }
+                }
             }
+            foo(filterElement, tag);
+            document.body.appendChild(divElement);
+        }
     }
+
 
 
 //
@@ -108,7 +158,121 @@ let check3 = document.getElementById('check3');
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 //
+
+let pop = document.getElementById('pop');
+console.log(pop)
+console.log(pop.nextElementSibling)
+
+function overDoz(element) {
+    let buttonBack = document.createElement('button');
+    buttonBack.innerText = 'Back';
+    let buttonForward = document.createElement('button');
+    buttonForward.id = 'btnForward;';
+    buttonForward.innerText = 'Forward';
+
+
+    function f(element) {
+        buttonForward.onclick = function () {
+            if (element.children.length) {
+                console.log(element.children[0])
+                f(element.children[0]);
+
+            }
+            if (element.nextElementSibling) {
+                console.log(element.nextElementSibling);
+                f(element.nextElementSibling)
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+    // let a=0;
+    // function f(element) {
+    //     let b=element;
+    //     buttonForward.onclick = function () {
+    //         if (b.children.length) {
+    //             let i = 0;
+    //             function childrenn() {
+    //                 console.log(b.children[a][i]);
+    //                 i++
+    //
+    //                 if (!b.children[a][i-1].nextElementSibling){
+    //                     return;
+    //                 }
+    //                 childrenn(b.children[a]);
+    //             }
+    //             childrenn()
+    //             console.log(a)
+    //             console.log(element.nextElementSibling);
+    //             f(element.nextElementSibling);
+    //         }
+    //     }
+    //     a++;
+    // }
+
+
+    // function f(element) {
+    //     let a = element;
+    //     let b = element;
+    //     buttonForward.onclick = function () {
+    //         console.log(element)
+    //         if (element.children.length) {
+    //             console.log(element.children[0])
+    //             b = element.children[0]
+    //             f(b);
+    //         }
+    //         if (!element.children.length) {
+    //             a = element.nextElementSibling;
+    //             console.log(element.nextElementSibling);
+    //             f(a);
+    //         } else {
+    //             return ()
+    //         }
+    //     }
+    // }
+f(element)
+
+
+    document.body.append(buttonBack, buttonForward);
+}
+
+let div1 = document.createElement('div');
+let p = document.createElement('p');
+let h2_ = document.createElement('h2');
+let div2 = document.createElement('div');
+let ul = document.createElement('ul');
+let li = document.createElement('li');
+let h3 = document.createElement('h3');
+let h5 = document.createElement('h5');
+let h6 = document.createElement('h6');
+
+ul.appendChild(li);
+div2.appendChild(ul);
+h2_.append(h3,h5,h6);
+div1.append(p, h2_, div2);
+
+overDoz(div1);
+
+
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+// let select1 = document.getElementById('select');
+// select1.onmousemove = function () {
+//     select1.classList.toggle('italic')
+// };
+let rung = new Range();
+let m = {insertNode(node) {
+    }}
+
+
