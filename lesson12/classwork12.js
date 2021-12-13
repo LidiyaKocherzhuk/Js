@@ -52,7 +52,6 @@ fetch(placeholder)
     .then(response => response.json())
     .then(responseComments => {
         responseComments.forEach(comment => {
-            console.log(comment)
             if (comment.postId === id) {
     let blocComments = document.createElement('div');
             blocComments.classList.add('show');
