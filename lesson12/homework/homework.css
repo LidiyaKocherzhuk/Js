@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.posts {
+    width: 20%;
+}
+.comment {
+    width: 40%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background: #eae9e9;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: #0c4128 3px -3px 20px 0;
+}
+
+.w_h3 {
+    width: 26%;
+}
+
+.w_h4 {
+    width: 70%;
+}
