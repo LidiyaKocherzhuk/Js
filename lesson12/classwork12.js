@@ -29,17 +29,17 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                 li.append(h3, h4);
                 ulPost.appendChild(li);
             }
-            buttonComment.onclick = function () {
                 let divComments = document.createElement('div');
                 divComments.classList.add('comments');
-                getComment(post.id, divComments);
-                divPostComment.appendChild(divComments);
-                buttonComment.disabled = true;
+                getComment('https://jsonplaceholder.typicode.com/comments', post.id, divComments);
+
+            buttonComment.onclick = function () {
+                divComments.classList.toggle('showComments')
             };
 
 
             ulPost.appendChild(buttonComment);
-            divPostComment.appendChild(ulPost);
+            divPostComment.append(ulPost, divComments);
             divElement.appendChild(divPostComment);
             document.body.appendChild(divElement);
 
@@ -47,8 +47,8 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     });
 
 
-function getComment(id, append) {
-fetch('https://jsonplaceholder.typicode.com/comments')
+function getComment(placeholder,id, append) {
+fetch(placeholder)
     .then(response => response.json())
     .then(responseComments => {
         responseComments.forEach(comment => {
