@@ -4,26 +4,6 @@
 //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.
 //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста
 
-function getInformation(placeholder, userId, user, append) {
-    fetch(placeholder)
-        .then(response => response.json())
-        .then(responseItem => {
-            responseItem.forEach(item => {
-                if (item.userId === user.id) {
-                    let blocItems = document.createElement('div');
-                    blocItems.classList.add('show');
-                    for (const key in item) {
-                        let h4 = document.createElement('h4');
-                        h4.classList.add('w_h4')
-                        h4.innerHTML = `<u>${key}:</u>   <i>${item[key]}</i>`
-                        blocItems.append(h4);
-                    }
-                    append.appendChild(blocItems);
-                }
-
-            })
-        })
-}
 
 let divElement = document.createElement('div');
 divElement.id = 'users'
@@ -39,9 +19,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let buttonPosts = document.createElement('button');
             buttonPosts.innerText = 'OPEN POSTS'
             buttonPosts.classList.add('btn');
-            let buttonComments = document.createElement('button');
-            buttonComments.innerText = 'OPEN COMMENTS'
-            buttonComments.classList.add('btn');
+
 
 
             for (const keyUser in user) {
@@ -66,59 +44,78 @@ fetch('https://jsonplaceholder.typicode.com/users')
                     }
                 }
 
-                divUser.append(h3, buttonPosts, buttonComments);
+                divUser.append(h3, buttonPosts);
             }
 
             let divPosts = document.createElement('div');
             divPosts.classList.add('d_none');
+
             fetch('https://jsonplaceholder.typicode.com/posts')
                 .then(response => response.json())
-                .then(responseItem => {
-                    responseItem.forEach(item => {
-                        if (item.userId === user.id) {
-                            let blocItems = document.createElement('div');
-                            blocItems.classList.add('show');
-                            for (const key in item) {
+                .then(responsePosts => {
+                    responsePosts.forEach(post => {
+
+                        let buttonComments = document.createElement('button');
+                        buttonComments.innerText = 'Open Comments'
+                        buttonComments.classList.add('btn1');
+
+
+                        if (post.userId === user.id) {
+                            let blocPost = document.createElement('div');
+                            blocPost.classList.add('show');
+                            for (const key in post) {
                                 let h4 = document.createElement('h4');
                                 h4.classList.add('w_h4')
-                                h4.innerHTML = `<u>${key}:</u>   <i>${item[key]}</i>`
-                                blocItems.append(h4);
+                                h4.innerHTML = `<u>${key}:</u>   <i>${post[key]}</i>`
+
+
+
+
+                            let divComments = document.createElement('div');
+                            divComments.classList.add('d_none', 'showComments');
+
+
+                            fetch('https://jsonplaceholder.typicode.com/comments')
+                                .then(response => response.json())
+                                .then(responseComment => {
+                                    responseComment.forEach(comment => {
+
+                                        let blocComment = document.createElement('div');
+                                        blocComment.classList.add('show');
+                                        blocComment.classList.add('show1');
+                                        if (comment.postId === post.id) {
+
+                                            for (const key in comment) {
+                                                let h4 = document.createElement('h4');
+                                                h4.classList.add('w_h4')
+                                                h4.innerHTML = `<u>${key}:</u>   <i>${comment[key]}</i>`
+                                                blocComment.append(h4);
+
+                                            }
+                                            divComments.appendChild(blocComment);
+                                        }
+
+                                    })
+                                })
+                            buttonComments.onclick = function () {
+                                divComments.classList.toggle('showPostsComments')
+
                             }
-                            divPosts.appendChild(blocItems);
+                                blocPost.append(h4, buttonComments, divComments);
+                            }
+                            divPosts.appendChild(blocPost);
                         }
 
                     })
                 })
 
-            let divComments = document.createElement('div');
-            divComments.classList.add('d_none');
-            fetch('https://jsonplaceholder.typicode.com/comments')
-                .then(response => response.json())
-                .then(responseItem => {
-                    responseItem.forEach(item => {
-                        if (item.postId === user.id) {
-                            let blocItems = document.createElement('div');
-                            blocItems.classList.add('show');
-                            for (const key in item) {
-                                let h4 = document.createElement('h4');
-                                h4.classList.add('w_h4')
-                                h4.innerHTML = `<u>${key}:</u>   <i>${item[key]}</i>`
-                                blocItems.append(h4);
-                            }
-                            divComments.appendChild(blocItems);
-                        }
-
-                    })
-                })
 
             buttonPosts.onclick = function () {
                 divPosts.classList.toggle('showPostsComments')
             };
-            buttonComments.onclick = function () {
-                divComments.classList.toggle('showPostsComments')
-            };
 
-            divUserCommentPost.append(divUser, divPosts, divComments);
+
+            divUserCommentPost.append(divUser, divPosts);
             divElement.appendChild(divUserCommentPost);
         });
 

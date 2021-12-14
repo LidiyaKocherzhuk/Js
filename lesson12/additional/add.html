@@ -14,11 +14,12 @@
     margin: 10px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .divUser {
-    width: 45%;
+    width: 100%;
 }
-.btn {
+.btn, .btn1 {
     border: none!important;
     background: #0a53be;
     margin: 10px;
@@ -27,6 +28,10 @@
     height: 35px;
     width: 150px;
 }
+.btn1 {
+    width: 50%;
+    height: 20px;
+}
 .marg {
     margin-left: 100px;
     padding: 1px 28px;
@@ -34,16 +39,18 @@
 }
 .d_none {
     position: absolute;
-    right: -1000px;
-    width: 25%;
+    right: -2000px;
     transition: 1s;
 }
 .showPostsComments {
     position: relative;
     right: 0;
+    display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .show {
+    width: 29%;
     background: white;
     border: 1px solid silver;
     box-shadow: black 0 0 7px 0;
@@ -51,6 +58,14 @@
     padding-left: 30px;
     margin: 10px;
 }
+.showComments {
+   max-height: 350px;
+    overflow-y: scroll;
+}
+.show1 {
+    width: 100%;
+}
+
 
     </style>
 </head>
