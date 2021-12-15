@@ -59,77 +59,99 @@ let usersWithAddress = [
 let check1 = document.getElementById('check1');
 let check2 = document.getElementById('check2');
 let check3 = document.getElementById('check3');
-let filterArray = [];
 
-    for (const elementUser of usersWithAddress) {
-        check1.onclick = function () {
-            if (this.checked) {
-                let filterStatus = usersWithAddress.filter(value => !value.status);
-                iter(filterStatus, 'h2');
-                filterArray.push(filterStatus);
 
-            }
-        }
-
-        check2.onclick = function () {
-            if (this.checked) {
-                let filterAge = usersWithAddress.filter(value => value.age >= 29);
-                iter(filterAge, 'h2');
-                filterArray.push(filterAge);
-            }
-        }
-
-        check3.onclick = function () {
-            if (this.checked) {
-                let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-                iter(filterCity, 'h2');
-                filterArray.push(filterCity);
-            }
-        }
-        let buttonArr = [];
-
-        let buttonFilter = document.getElementById('buttonFilter');
+let buttonFilter = document.getElementById('buttonFilter');
         buttonFilter.onclick = function (e) {
-            e.preventDefault();
+            e.preventDefault()
 
-        function f(arr) {
-            console.log(arr)
-            if (arr.length) {
-                for (const arrElement of arr) {
-                    f(arrElement);
-                    }
-                }
-            }
-            f(filterArray)
+            let status = false;
+            let age = 29;
+            let city = 'Kyiv';
+            if (check1.checked) {
+            console.log(usersWithAddress.filter(value => value.status === status));
             }
 
-        // console.log(buttonArr);
 
 
-        // let filterStatus, filterAge, filterCity;
-        //     if (check1.checked) {
-        //         filterStatus = usersWithAddress.filter(value => !value.status);
-        //     }
-        // if (check1.checked && check2.checked) {
-        //         filterAge = filterStatus.filter(value => value.age >= 29);
-        // }else if (check2.checked) {
-        //     filterAge = usersWithAddress.filter(value => value.age >= 29);
-        // }
-        // if (check2.checked && check3.checked) {
-        //     filterCity = filterAge.filter(value => value.address.city === 'Kyiv');
-        // }else if (check1.checked && check3.checked) {
-        //     filterCity = filterStatus.filter(value => value.address.city === 'Kyiv');
-        // }else if (check3.checked) {
-        //     filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-        // }
-        // console.log(filterStatus, filterAge, filterCity);
 
 
+            // let id = document.forms.formFilter.children
+            // for (const element of id) {
+            //     console.log(element.value);
+
+                // if (element.checked) {
+                //     iterArray(usersWithAddress, 'h2');
+                //
+                // }
+            // }
+
+
+
+    //
+    // for (const elementUser of usersWithAddress) {
+    //     check1.onclick = function () {
+    //         if (this.checked) {
+    //             filterStatus = usersWithAddress.filter(value => !value.status);
+    //             iterArray(filterStatus, 'h2');
+    //         }
+    //     }
+    //
+    //     check2.onclick = function () {
+    //         if (this.checked) {
+    //             let filterAge = usersWithAddress.filter(value => value.age >= 29);
+    //             iterArray(filterAge, 'h2');
+    //         } else if (this.checked && check1.checked) {
+    //             filterAge = filterStatus.filter(value => value.age >= 29)
+    //         }
+    //     }
+    //
+    //     check3.onclick = function () {
+    //         if (this.checked) {
+    //             let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+    //             iterArray(filterCity, 'h2');
+    //         }
+    //     }
+    //     console.log(filterStatus)
+
+//         let buttonFilter = document.getElementById('buttonFilter');
+//         buttonFilter.onclick = function (e) {
+//             e.preventDefault()
+//
+//
+//             let filterStatus = [], filterAge = [], filterCity = [];
+//
+//             if (check1.checked && check2.checked && check3.checked) {
+//                 filterCity = filterAge.filter(value => value.address.city === 'Kyiv');
+//                 console.log(filterCity)
+//                 iterArray(filterCity, 'h2');
+//             }else if (check2.checked && check3.checked) {
+//                 filterCity = filterAge.filter(value => value.address.city === 'Kyiv');
+//                 iterArray(filterCity, 'h2');
+//                 console.log(filterCity)
+//             } else if (check1.checked && check3.checked) {
+//                 filterCity = filterStatus.filter(value => value.address.city === 'Kyiv');
+//                 iterArray(filterCity, 'h2');
+//             } else if (check1.checked && check2.checked) {
+//                 filterAge = filterStatus.filter(value => value.age >= 29);
+//                 iterArray(filterAge, 'h2');
+//             } else if (check1.checked) {
+//                 filterStatus = usersWithAddress.filter(value => !value.status);
+//                 console.log(filterStatus);
+//                 iterArray(filterStatus, 'h2');
+//             } else if (check2.checked) {
+//                 filterAge = usersWithAddress.filter(value => value.age >= 29);
+//                 iterArray(filterAge, 'h2');
+//             } else if (check3.checked) {
+//                 filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+//                 iterArray(filterCity, 'h2');
+//             }
+//         };
+//
 }
 
-// console.log(filterArray);
 
-    function iter(object, tag) {
+    function iterArray(object, tag) {
         for (const filterElement of object) {
             let divElement = document.createElement('div');
             divElement.id = 'objStyle';
