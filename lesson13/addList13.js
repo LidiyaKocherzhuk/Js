@@ -11,6 +11,9 @@
 
 let products = JSON.parse(localStorage.getItem('products'));
 
+let formDeleteAll = document.createElement('form');
+formDeleteAll.action = 'list.html'
+
 let btnDelete = document.createElement('button');
 btnDelete.classList.add('btnDelete');
 btnDelete.innerText = 'DELETE ALL';
@@ -18,6 +21,10 @@ btnDelete.innerText = 'DELETE ALL';
 for (const product of products) {
     let divProduct = document.createElement('div');
     divProduct.classList.add('divProduct')
+
+    let form = document.createElement('form');
+    form.action = 'list.html'
+
     let btnDeleteProduct = document.createElement('button');
     btnDeleteProduct.classList.add('productDelete')
     btnDeleteProduct.innerText = 'DELETE!';
@@ -35,30 +42,41 @@ for (const product of products) {
             if (key.includes('price')) {
                 h3.innerHTML = `<i>${key}:</i>  ${product[key]}$.`
             }
-            divProductItem.append(h3, btnDeleteProduct);
+            form.appendChild(btnDeleteProduct);
+            divProductItem.append(h3, form);
         }
 
     }
-            divProduct.appendChild(divProductItem);
+    divProduct.appendChild(divProductItem);
 
-    btnDeleteProduct.onclick = function () {
+    btnDeleteProduct.addEventListener('click', function () {
         for (let i = 0; i < products.length; i++) {
             if (products[i] === product) {
                 products.splice(i, 1)
                 localStorage.setItem('products', JSON.stringify(products))
             }
         }
-    };
+    })
+    btnDeleteProduct.addEventListener('submit', function (e) {
+        JSON.parse(localStorage.getItem('products'))
+
+    });
+
 
     document.body.appendChild(divProduct);
 }
 btnDelete.onclick = function () {
     localStorage.removeItem('products');
 };
+btnDelete.onsubmit = function () {
+    JSON.parse(localStorage.getItem('products'))
+};
 btnDelete.onmouseover = function () {
-   btnDelete.classList.toggle('btnOver')
+    btnDelete.classList.toggle('btnOver');
 };
 btnDelete.onmouseleave = function () {
-    btnDelete.classList.toggle('btnOver')
+    btnDelete.classList.toggle('btnOver');
 };
-document.body.appendChild(btnDelete)
+
+formDeleteAll.appendChild(btnDelete);
+document.body.appendChild(formDeleteAll);
