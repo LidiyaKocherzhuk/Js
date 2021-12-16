@@ -17,25 +17,29 @@ btnDelete.innerText = 'DELETE ALL';
 
 for (const product of products) {
     let divProduct = document.createElement('div');
+    divProduct.classList.add('divProduct')
     let btnDeleteProduct = document.createElement('button');
     btnDeleteProduct.classList.add('productDelete')
-    btnDeleteProduct.innerText = 'delete this produkt';
+    btnDeleteProduct.innerText = 'DELETE!';
 
+    let divProductItem = document.createElement('div');
+    divProductItem.classList.add('divProductItem')
     for (const key in product) {
         if (key.includes('image')) {
             let img = document.createElement('img');
             img.src = product[key];
-            divProduct.appendChild(img);
+            divProduct.append(img);
         } else {
-            let h2 = document.createElement('h2');
-            h2.innerHTML = `<i>${key}:</i> - ${product[key]}.`
+            let h3 = document.createElement('h3');
+            h3.innerHTML = `<i>${key}:</i>  ${product[key]}.`
             if (key.includes('price')) {
-                h2.innerHTML = `<i>${key}:</i> - ${product[key]}$.`
+                h3.innerHTML = `<i>${key}:</i>  ${product[key]}$.`
             }
-            divProduct.append(h2, btnDeleteProduct);
+            divProductItem.append(h3, btnDeleteProduct);
         }
 
     }
+            divProduct.appendChild(divProductItem);
 
     btnDeleteProduct.onclick = function () {
         for (let i = 0; i < products.length; i++) {

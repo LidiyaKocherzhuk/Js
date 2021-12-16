@@ -12,40 +12,56 @@
             flex-wrap: wrap;
             justify-content: space-around;
         }
-        div {
-            border: 1px solid #6a1a21;
-            box-sizing: border-box;
+        .divProduct {
+            /*border-top: 1px solid #6a1a21;*/
+            /*border-left: 1px solid #6a1a21;*/
             padding: 20px;
             width: 45%;
             margin: 20px;
             display: flex;
-            flex-direction: column;
+            /*flex-direction: column;*/
             align-items: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .divProductItem {
+            padding-left: 10px;
+border-left: 1px solid black;
         }
         img {
-            border-radius: 10px;
-            margin: 50px;
             width: 40%;
+            margin: 50px;
+            border-radius: 10px;
+
         }
         .btnDelete {
             width: 20%;
             height: 50px;
-            background: #0a53be;
+            background: #2b5a2c;
             color: white;
             border-radius: 10px;
             font-size: 20px;
             border: none;
         }
         .btnOver {
-            background: #415676;
+            background: black;
         }
         .productDelete {
-            width: fit-content;
-            background: blue;
+            /*position: absolute;*/
+            top: 20px;
+            right: 20px;
+            width:100px;
+            height: 50px;
+            background: #4caf50;
             color: white;
             border: none;
-            height: 25px;
             border-radius: 5px;
+        }
+        .productDelete:hover {
+            background: black;
+        }
+        h3 {
+            width: 100%;
         }
     </style>
 </head>
