@@ -116,79 +116,60 @@ function backHome(howLong) {
     }, 300);
 }
 
-setTimeout(() => {
-    wakeUp(8, (error, time) => {
-        if (error) {
-            console.error(error);
-            document.write('Upppssss... Щось пішло не так!');
-        } else {
-            setTimeout(() => {
-                toGetDressed(0.02, (error, time) => {
+wakeUp(8, (error, time) => {
+    if (error) {
+        console.error(error);
+        document.write('Upppssss... Щось пішло не так!');
+    } else {
+        toGetDressed(0.02, (error, time) => {
+            if (error) {
+                console.error(error);
+                document.write('Upppssss... Щось пішло не так!');
+            } else {
+                toWash(0.05, (error, time) => {
                     if (error) {
                         console.error(error);
                         document.write('Upppssss... Щось пішло не так!');
                     } else {
-                        setTimeout(() => {
-                            toWash(0.05, (error, time) => {
-                                if (error) {
-                                    console.error(error);
-                                    document.write('Upppssss... Щось пішло не так!');
-                                } else {
-                                    setTimeout(() => {
-                                        brushTeeth(0.04, (error, time) => {
+                        brushTeeth(0.04, (error, time) => {
+                            if (error) {
+                                console.error(error);
+                                document.write('Upppssss... Щось пішло не так!');
+                            } else {
+                                cookBreakfast(0.15, (error, time) => {
+                                    if (error) {
+                                        console.error(error);
+                                        document.write('Upppssss... Щось пішло не так!');
+                                    } else {
+                                        eat(0.15, (error, time) => {
                                             if (error) {
                                                 console.error(error);
                                                 document.write('Upppssss... Щось пішло не так!');
                                             } else {
-                                                setTimeout(() => {
-                                                    cookBreakfast(0.15, (error, time) => {
-                                                        if (error) {
-                                                            console.error(error);
-                                                            document.write('Upppssss... Щось пішло не так!');
-                                                        } else {
-                                                            setTimeout(() => {
-                                                                eat(0.15, (error, time) => {
-                                                                    if (error) {
-                                                                        console.error(error);
-                                                                        document.write('Upppssss... Щось пішло не так!');
-                                                                    } else {
-                                                                        setTimeout(() => {
-                                                                            goToWork(1, (error, time) => {
-                                                                                if (error) {
-                                                                                    console.error(error);
-                                                                                    document.write('Upppssss... Щось пішло не так!');
-                                                                                } else {
-                                                                                    setTimeout(() => {
-                                                                                        toWork(8, (error, time) => {
-                                                                                            if (error) {
-                                                                                                console.error(error);
-                                                                                                document.write('Upppssss... Щось пішло не так!');
-                                                                                            } else {
-                                                                                                setTimeout(() => {
-                                                                                                    backHome(1);
-                                                                                                }, 100);
-                                                                                            }
-                                                                                        })
-                                                                                    }, 300)
-                                                                                }
-                                                                            })
-                                                                        }, 500)
-                                                                    }
-                                                                })
-                                                            }, 200)
-                                                        }
-                                                    })
-                                                }, 300)
+                                                goToWork(1, (error, time) => {
+                                                    if (error) {
+                                                        console.error(error);
+                                                        document.write('Upppssss... Щось пішло не так!');
+                                                    } else {
+                                                        toWork(8, (error, time) => {
+                                                            if (error) {
+                                                                console.error(error);
+                                                                document.write('Upppssss... Щось пішло не так!');
+                                                            } else {
+                                                                backHome(1);
+                                                            }
+                                                        })
+                                                    }
+                                                })
                                             }
                                         })
-                                    }, 100)
-                                }
-                            })
-                        }, 200)
+                                    }
+                                })
+                            }
+                        })
                     }
                 })
-            }, 150)
-        }
-    })
-},100);
-
+            }
+        })
+    }
+});
