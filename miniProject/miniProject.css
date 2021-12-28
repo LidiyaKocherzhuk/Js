@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.back {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v546batch3-mynt-34-badgewatercolor_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=89288ef4b47127f7f34a5998b50e4470") no-repeat center/cover;
+    min-height: 100vh;
+}
+span {
+     margin-left: 20px;
+ }
+
+
+.user {
+    width: 45%;
+    margin: 20px;
+    background: #af86fe52;
+    border-radius: 10px;
+}
+
+.user > h2 {
+width: 100%;
+    text-align: center;
+}
+
+.btnUser {
+    margin: 20px;
+    background: rgba(156, 39, 176, 0.76);
+    width: 129px;
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.btnUser:hover {
+    background: #9a14a8;
+    color: white;
+}
+
+   /*title details Users*/
+
+.userD{
+    width: 80%;
+    background: #ffffff38;
+    height: fit-content;
+    padding: 10px 25px;
+    margin: 30px 150px;
+    box-shadow: -7px 1px 20px 0 #343434;
+    border-radius: 10px;
+}
+.btnPostTitle {
+    color: white;
+    width: 90%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(156, 39, 176, 0.29);
+    box-shadow: 1px 0 20px 0 #000000;
+}
+.btnPostTitle:hover {
+    background: rgba(156, 39, 176, 0.61);
+}
+
+
+   /*title details Post*/
+
+.titlePosts {
+    position: relative;
+    top: -2000px;
+    transition: 1s;
+    display: flex;
+    flex-wrap: wrap;
+}
+.showTitlePosts {
+    top: 0;
+    margin: 100px 0;
+    justify-content: center;
+    text-align: center;
+    transition: 1s;
+}
+.divTitlePost {
+    margin: 10px;
+    width: 15%;
+    padding: 10px;
+    box-shadow: 1px 0 10px 0 black;
+    background: #ffffff9c;
+}
+.divTitlePost>a {
+    text-decoration: none;
+    !important;
+    font-size: 20px;
+    color: black;!important;
+}
+.divTitlePost>a:hover {
+    font-size: 22px;
+    color: #9c27b0;!important;
+
+}
+
+
+        /*title Post*/
+.d_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blocPost {
+}
+.post {
+    text-align: center;
+    width: 90%;
+    margin-top: 30px;
+    background: #d0a99a00;
+    box-shadow: 1px 0 16px 0 #8a8787;
+    border-radius: 5px;
+    padding: 10px;
+}
+.post>h2,h4,h5 {
+    width: 55%;
+}
+.comments {
+    width: 90%;
+    margin-top: 50px;
+}
+.comment {
+    width: 23%;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 0 10px 0 black;
+    background: #ffffff9c;
+}
+
+
+
+
+

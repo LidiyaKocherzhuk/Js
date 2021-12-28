@@ -61,58 +61,69 @@ let check2 = document.getElementById('check2');
 let check3 = document.getElementById('check3');
 
 
+
+//             let status = false;
+//             let age = 29;
+//             let city = 'Kyiv';
+//             if (check1.checked) {
+//             console.log(usersWithAddress.filter(value => value.status === status));
+//             }
+//
+//
+//
+//
+//
+//             // let id = document.forms.formFilter.children
+//             // for (const element of id) {
+//             //     console.log(element.value);
+//
+//                 // if (element.checked) {
+//                 //     iterArray(usersWithAddress, 'h2');
+//                 //
+//                 // }
+//             // }
+
+
 let buttonFilter = document.getElementById('buttonFilter');
         buttonFilter.onclick = function (e) {
             e.preventDefault()
+            oneClick(usersWithAddress);
 
-            let status = false;
-            let age = 29;
-            let city = 'Kyiv';
-            if (check1.checked) {
-            console.log(usersWithAddress.filter(value => value.status === status));
-            }
+        }
+            // for (const elementUser of usersWithAddress) {
+function oneClick(arr) {
+    check1.onclick = function () {
+        if (this.checked) {
+            let filterStatus = arr.filter(value => !value.status);
+            iterArray(filterStatus, 'h2');
+        }
+    }
+}
 
 
+                check2.onclick = function () {
+                    if (this.checked) {
+                        let filterAge = usersWithAddress.filter(value => value.age >= 29);
+                        iterArray(filterAge, 'h2');
+                    }
+                }
 
+                check3.onclick = function () {
+                    if (this.checked) {
+                        let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+                        iterArray(filterCity, 'h2');
+                    }
+                }
 
-
-            // let id = document.forms.formFilter.children
-            // for (const element of id) {
-            //     console.log(element.value);
-
-                // if (element.checked) {
-                //     iterArray(usersWithAddress, 'h2');
-                //
-                // }
             // }
 
 
 
-    //
-    // for (const elementUser of usersWithAddress) {
-    //     check1.onclick = function () {
-    //         if (this.checked) {
-    //             filterStatus = usersWithAddress.filter(value => !value.status);
-    //             iterArray(filterStatus, 'h2');
-    //         }
-    //     }
-    //
-    //     check2.onclick = function () {
-    //         if (this.checked) {
-    //             let filterAge = usersWithAddress.filter(value => value.age >= 29);
-    //             iterArray(filterAge, 'h2');
-    //         } else if (this.checked && check1.checked) {
-    //             filterAge = filterStatus.filter(value => value.age >= 29)
-    //         }
-    //     }
-    //
-    //     check3.onclick = function () {
-    //         if (this.checked) {
-    //             let filterCity = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-    //             iterArray(filterCity, 'h2');
-    //         }
-    //     }
-    //     console.log(filterStatus)
+
+
+
+
+
 
 //         let buttonFilter = document.getElementById('buttonFilter');
 //         buttonFilter.onclick = function (e) {
@@ -148,7 +159,7 @@ let buttonFilter = document.getElementById('buttonFilter');
 //             }
 //         };
 //
-}
+// }
 
 
     function iterArray(object, tag) {
@@ -180,6 +191,10 @@ let buttonFilter = document.getElementById('buttonFilter');
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 //
+//
+
+
+
 
 let pop = document.getElementById('pop');
 console.log(pop)
@@ -209,6 +224,9 @@ function overDoz(element) {
 
     }
 
+    f(element);
+    document.body.append(buttonForward, buttonBack);
+}
 
 
 
@@ -240,31 +258,31 @@ function overDoz(element) {
     //     a++;
     // }
 
+//
+//     function f(element) {
+//         let a = element;
+//         let b = element;
+//         buttonForward.onclick = function () {
+//             console.log(element)
+//             if (element.children.length) {
+//                 console.log(element.children[0])
+//                 b = element.children[0]
+//                 f(b);
+//             }
+//             if (!element.children.length) {
+//                 a = element.nextElementSibling;
+//                 console.log(element.nextElementSibling);
+//                 f(a);
+//             } /*else {
+//                 return ()
+//             }*/
+//         }
+//     }
+// f(element)
 
-    // function f(element) {
-    //     let a = element;
-    //     let b = element;
-    //     buttonForward.onclick = function () {
-    //         console.log(element)
-    //         if (element.children.length) {
-    //             console.log(element.children[0])
-    //             b = element.children[0]
-    //             f(b);
-    //         }
-    //         if (!element.children.length) {
-    //             a = element.nextElementSibling;
-    //             console.log(element.nextElementSibling);
-    //             f(a);
-    //         } else {
-    //             return ()
-    //         }
-    //     }
-    // }
-f(element)
 
-
-    document.body.append(buttonBack, buttonForward);
-}
+    // document.body.append(buttonBack, buttonForward);
+// }
 
 let div1 = document.createElement('div');
 let p = document.createElement('p');
@@ -283,6 +301,16 @@ div1.append(p, h2_, div2);
 
 overDoz(div1);
 
+// function reCall(startElement) {
+//     console.log(startElement);
+//     if (startElement.children.length) {
+//         for (const element of startElement.children) {
+//             reCall(element);
+//         }
+//     }
+// }
+//
+// reCall(div1);
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //
@@ -293,8 +321,8 @@ overDoz(div1);
 // select1.onmousemove = function () {
 //     select1.classList.toggle('italic')
 // };
-let rung = new Range();
-let m = {insertNode(node) {
-    }}
+// let rung = new Range();
+// let m = {insertNode(node) {
+//     }}
 
 

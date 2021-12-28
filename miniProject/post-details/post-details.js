@@ -21,6 +21,48 @@
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(value => JSON)
-    .then();
+
+let posts = localStorage.getItem('Posts')
+let postsParse = JSON.parse(posts);
+console.log(postsParse);
+
+const blocPost = document.createElement('div');
+blocPost.classList.add('blocPost','back', 'd_flex')
+const divPost = document.createElement("div");
+divPost.classList.add('post', 'postOne', 'd_flex');
+const divPostClone = divPost.cloneNode()
+divPostClone.classList.add('post', 'postTwo', 'd_flex');
+
+for (const key in postsParse) {
+    const h4Posts = document.createElement('h4');
+    if (typeof postsParse[key] === 'number') {
+        h4Posts.innerHTML = `------- ${key}: ${postsParse[key]} -------`;
+    }
+    divPostClone.appendChild(h4Posts);
+}
+
+divPost.innerHTML = `<h2>${postsParse.title}</h2> <h5>${postsParse.body}</h5>`
+blocPost.append(divPost, divPostClone);
+
+fetch(`https://jsonplaceholder.typicode.com/posts/${postsParse.id}/comments`)
+    .then(response => response.json())
+    .then(comments => {
+        let divComments = document.createElement('div');
+        divComments.classList.add('comments', 'd-flex', 'flex-wrap', 'justify-content-center')
+        comments.forEach(comment => {
+
+            let divComment = document.createElement('div');
+            divComment.classList.add('comment')
+
+            for (const commentKey in comment) {
+                const h4Comments = document.createElement('h6');
+                h4Comments.innerHTML = `<u><i>${commentKey}:</i></u> <span>${comment[commentKey]};</span>`
+                divComment.appendChild(h4Comments);
+            }
+
+            divComments.appendChild(divComment);
+
+        });
+        blocPost.appendChild(divComments);
+    });
+document.body.appendChild(blocPost);
