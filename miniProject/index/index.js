@@ -35,13 +35,13 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 const hrefDetails = document.createElement('a');
                 hrefDetails.classList.add('btnUser', 'd-flex', 'align-items-center', 'justify-content-center')
                 hrefDetails.innerText = 'Details'
+                hrefDetails.href = '../user-details/user-details.html';
 
-                for (const userKey in user) {
+            for (const userKey in user) {
                     divUser.innerHTML = `<h2>${user.id}. ${user.name}</h2>`
 
                     hrefDetails.onclick = function () {
                         localStorage.setItem('Users', JSON.stringify(user));
-                        hrefDetails.href = "http://localhost:63342/Js/miniProject/user-details/user-details.html?_ijt=51g438pmu04nh5ac9gkahe2076&_ij_reload=RELOAD_ON_SAVE";
                     }
 
                 }
