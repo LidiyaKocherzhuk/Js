@@ -41,7 +41,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
                     hrefDetails.onclick = function () {
                         localStorage.setItem('Users', JSON.stringify(user));
-                        hrefDetails.href = "http://localhost:63342/Js/miniProject/user-details/user-details.html?_ijt=51g438pmu04nh5ac9gkahe2076&_ij_reload=RELOAD_ON_SAVE";
+                        hrefDetails.href = "../user-details/user-details.html";
                     }
 
                 }

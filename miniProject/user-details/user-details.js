@@ -64,8 +64,8 @@ then(posts => {
 
         for (const postKey in post) {
 
-           aTitle.innerHTML = `${post.title}`
-            aTitle.href = 'http://localhost:63342/Js/miniProject/post-details/post-details.html?_ijt=pdaqpjshksu1k2bitlrend507f&_ij_reload=RELOAD_ON_SAVE'
+           aTitle.innerHTML = `${post.title}`;
+            aTitle.href = '../post-details/post-details.html';
 
             aTitle.onclick = function () {
                 localStorage.setItem('Posts', JSON.stringify(post));
