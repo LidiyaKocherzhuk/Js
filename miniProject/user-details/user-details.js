@@ -64,8 +64,8 @@ then(posts => {
 
         for (const postKey in post) {
 
-           aTitle.innerHTML = `${post.title}`;
-            aTitle.href = '../post-details/post-details.html';
+           aTitle.innerHTML = `${post.title}`
+            aTitle.href = '../post-details/post-details.html'
 
             aTitle.onclick = function () {
                 localStorage.setItem('Posts', JSON.stringify(post));
